@@ -8,30 +8,15 @@ Predict which on-premise servers are optimal for migration to the cloud using ma
 - Flask REST API for predictions
 - Containerized with Docker
 - CI pipeline via GitHub Actions
+- Makefile automation for quick setup
 
 ## How to Run
 ```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+# Create virtual environment and install dependencies
+make setup
 
-# Install dependencies
-pip install -r requirements.txt
+# Train the model
+make train
 
-# Train model and run API
-python model/train_model.ipynb
-python app/inference.py
-```
-
-## Inference Sample
-```json
-{
-  "cpu_utilization": 75,
-  "memory_usage": 63,
-  "uptime_days": 425,
-  "network_in": 134,
-  "network_out": 145,
-  "storage_type": "ssd",
-  "os": "linux"
-}
-```
+# Run the Flask inference API
+make run
