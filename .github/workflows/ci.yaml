@@ -18,8 +18,11 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -m venv .venv
+          source .venv/bin/activate
           pip install -r requirements.txt
 
       - name: Run model training
         run: |
+          source .venv/bin/activate
           python model/train_model.ipynb
