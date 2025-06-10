@@ -11,7 +11,14 @@ Predict which on-premise servers are optimal for migration to the cloud using ma
 
 ## How to Run
 ```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Train model and run API
 python model/train_model.ipynb
 python app/inference.py
 ```
