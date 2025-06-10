@@ -1,14 +1,27 @@
 .PHONY: setup train run clean
 
+# Location of the virtual environment activation script
+ACTIVATE = source .venv/bin/activate
+
+# Create virtual environment and install dependencies
 setup:
-	python -m venv .venv
-	source .venv/bin/activate && pip install -r requirements.txt
+	@echo "🔧 Creating virtual environment and installing dependencies..."
+	python3 -m venv .venv
+	$(ACTIVATE) && pip install --upgrade pip && pip install -r requirements.txt
 
+# Train the ML model
 train:
-	source .venv/bin/activate && python model/train_model.py
+	@echo "🚀 Training the model..."
+	$(ACTIVATE) && python model/train_model.py
 
+# Run the Flask inference API
 run:
-	source .venv/bin/activate && python app/inference.py
+	@echo "🌐 Starting the Flask API..."
+	$(ACTIVATE) && python app/inference.py
 
+# Clean up environment and model artifacts
 clean:
-	rm -rf .venv __pycache__ *.pkl
+	@echo "🧹 Cleaning up..."
+	rm -rf .venv
+	rm -rf __pycache__
+	rm -f model/xgboost_model.pkl

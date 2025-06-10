@@ -4,7 +4,7 @@ import xgboost as xgb
 import pickle
 
 # Load data
-df = pd.read_csv("../data/synthetic_server_data.csv")
+df = pd.read_csv("data/synthetic_server_data.csv")
 df["storage_type"] = df["storage_type"].map({"ssd": 1, "hdd": 0})
 df["os"] = df["os"].map({"linux": 1, "windows": 0})
 
@@ -18,5 +18,5 @@ model = xgb.XGBClassifier()
 model.fit(X_train, y_train)
 
 # Save model
-with open("xgboost_model.pkl", "wb") as f:
+with open("model/xgboost_model.pkl", "wb") as f:
     pickle.dump(model, f)
