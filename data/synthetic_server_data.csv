@@ -1,0 +1,5 @@
+os,cpu_utilization,memory_usage,uptime_days,network_in,network_out,storage_type,migration_feasible
+linux,67,58,380,112,130,ssd,1
+windows,52,74,150,200,198,hdd,0
+linux,85,69,560,154,148,ssd,1
+windows,44,48,90,98,105,hdd,0
