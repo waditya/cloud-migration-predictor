@@ -25,4 +25,4 @@ jobs:
       - name: Run model training
         run: |
           source .venv/bin/activate
-          python model/train_model.ipynb
+          python model/train_model.py

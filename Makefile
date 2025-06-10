@@ -5,7 +5,7 @@ setup:
 	source .venv/bin/activate && pip install -r requirements.txt
 
 train:
-	source .venv/bin/activate && python model/train_model.ipynb
+	source .venv/bin/activate && python model/train_model.py
 
 run:
 	source .venv/bin/activate && python app/inference.py
