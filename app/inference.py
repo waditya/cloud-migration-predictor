@@ -4,7 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-with open("../model/xgboost_model.pkl", "rb") as f:
+with open("xgboost_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 def preprocess(data):
