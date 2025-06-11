@@ -20,3 +20,8 @@ make train
 
 # Run the Flask inference API
 make run
+
+## Building and running Docker image locally
+```bash
+docker build -t cloud-migration-api .
+docker run -p 5000:5000 cloud-migration-api
